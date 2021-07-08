@@ -5,9 +5,15 @@ class ingredientItem(models.Model):
   property = models.TextField()
   img_url = models.TextField()
 
+  def __str__(self):
+        return self.name
+
 class recipeItem(models.Model):
   name = models.TextField()
   ingredients = models.TextField()
   directions = models.TextField()
   img_url = models.TextField()
   list_ingredient = models.ManyToManyField(ingredientItem)
+
+  def __str__(self):
+        return self.name
